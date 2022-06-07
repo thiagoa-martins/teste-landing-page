@@ -222,3 +222,64 @@ body {
     height: 39px;
     margin: 0 auto;
 }
+/****************
+    SHARE
+****************/
+.share {
+    padding: 0 0 150px;
+}
+
+.share .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+.share .title::before,
+.share .title::after {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    width: 38%;
+    background-color: var(--color-secodary);
+}
+
+.share .sub-title {
+    text-align: center;
+    font-size: 0.875em;
+    font-weight: 500;
+    margin-bottom: 3em;
+}
+
+.share .form-friend {
+    display: flex;
+    justify-content: space-between;
+    width: 750px;
+    margin: 0 auto 3em;
+    font-size: 0.75em;
+}
+
+.share .form-friend fieldset {
+    border: none;
+    width: 340px;
+}
+
+.share .form-friend .friend-name,
+.share .form-friend .friend-email {
+    display: block;
+    margin-top: 5px;
+}
+
+.share .form-friend input {
+    width: 100%;
+    margin: 5px 0 1em;
+    padding: 5px 10px;
+}
+
+.share .button {
+    width: 260px;
+    height: 39px;
+    margin: 0 auto;
+    font-size: 1em;
+}
