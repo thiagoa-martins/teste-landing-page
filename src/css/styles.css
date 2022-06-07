@@ -58,7 +58,7 @@ body {
 
 .header ul.menu li {
     width: 150px;
-    padding: 10px 0;
+    height: 40px;
     background-color: var(--color-ternary);
     border-radius: 5px;
     border: 3px solid var(--color-secodary);
@@ -74,26 +74,19 @@ body {
 }
 
 .header ul.menu li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     color: var(--color-primary);
     font-size: 14px;
-    padding: 20px;
-}
-
-.header ul.menu li .meet {
-    padding: 20px 26.3px;
-}
-
-.header ul.menu li .your-products {
-    padding: 20px 29.8px;
-}
-
-.header ul.menu li .share {
-    padding: 20px 40px;
+    width: 100%;
+    height: 100%;
 }
 
 .header-box {
     width: 900px;
+    margin: 0 auto;
 }
 /************************
     HELP THE ALGORITHM
