@@ -20,6 +20,24 @@ body {
     margin: 0 auto;
     max-width: 940px;
 }
+
+.button {
+    display: block;
+    border: 1px solid var(--color-primary);
+    border-radius: 3px;
+    color: var(--color-primary);
+    background-color: var(--color-ternary);
+    width: 100%;
+    font-size: 1em;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.button:hover {
+    color: var(--color-ternary);
+    background-color: var(--color-primary);
+}
 /***********
     HEADER
 ***********/
@@ -27,7 +45,7 @@ body {
     background-color: var(--color-secodary);
     color: var(--color-ternary);
     text-align: center;
-    padding: 3em 0 150px;
+    padding: 4em 0 150px;
     /*
         Para cada separação de vírgula temos um polígono. Configuramos seus pontos com os eixos x, y.
     */
@@ -91,9 +109,6 @@ body {
 /************************
     HELP THE ALGORITHM
 ************************/
-.help-the-algorithm {
-}
-
 .help-the-algorithm .container {
     display: flex;
     justify-content: space-between;
@@ -121,28 +136,11 @@ body {
     color: var(--color-primary);
 }
 
-.help-the-algorithm .form .field,
-.help-the-algorithm .form .submit {
+.help-the-algorithm .form .field {
     display: block;
     width: 100%;
     margin: 5px 0 1em;
     padding: 5px 10px;
-}
-
-.help-the-algorithm .form .submit {
-    border: 1px solid var(--color-primary);
-    border-radius: 3px;
-    color: var(--color-primary);
-    background-color: var(--color-ternary);
-    font-size: 1em;
-    padding: 10px;
-    cursor: pointer;
-    transition: all 200ms;
-}
-
-.help-the-algorithm .form .submit:hover {
-    color: var(--color-ternary);
-    background-color: var(--color-primary);
 }
 
 .help-the-algorithm .form .genre {
@@ -153,4 +151,74 @@ body {
 .help-the-algorithm .form .genre label {
     margin-right: 2em;
 }
+/************************
+    YOUR PRODUCTS
+************************/
+.your-products {
+    padding: 4em 0 150px;
+}
+.your-products .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3em;
+}
 
+.your-products .title::before,
+.your-products .title::after {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    width: 38%;
+    background-color: var(--color-secodary);
+}
+
+.your-products .box-products {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.your-products .product {
+    width: 200px;
+    font-size: 0.75em;
+    margin-bottom: 4em;
+}
+
+.your-products .product .image {
+    height: 150px;
+    border: 1px solid var(--color-secodary);
+}
+
+
+.your-products .product .title-product {
+    margin: 1em 0;
+    font-size: 0.875em;
+}
+
+.your-products .product .description,
+.your-products .product .old-price,
+.your-products .product .new-price,
+.your-products .product .new-price span {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.your-products .product .new-price {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.your-products .product .new-price span {
+    font-weight: 500;
+    margin: 1em 0;
+}
+.your-products .product button {
+    padding: 5px 10px;
+}
+
+.your-products .button.more-products {
+    width: 260px;
+    height: 39px;
+    margin: 0 auto;
+}
