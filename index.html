@@ -9,19 +9,60 @@
     <link rel="stylesheet" href="src/css/styles.css">
 </head>
 <body>
-    <header>
-        <h3>uma seleção de produtos</h3>
-        <h1>especial para você</h1>
-        <h5>Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!</h5>
+    <header class="header">
+        <div class="container">
+            <div class="header-box">
+                <h2>uma seleção de produtos</h2>
+                <h1 class="title-main">especial para você</h1>
+                <h4>Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!</h4>
 
-        <nav>
-            <ul>
-                <li><a href="#">Conheça o Linx</a></li>
-                <li><a href="#">Ajude o algoritmo</a></li>
-                <li><a href="#">Seus produtos</a></li>
-                <li><a href="#">Compartilhe</a></li>
-            </ul>
-        </nav>
+                <nav>
+                    <ul class="menu">
+                        <li><a class="meet" href="#">Conheça o Linx</a></li>
+                        <li><a href="#">Ajude o algoritmo</a></li>
+                        <li><a class="your-products" href="#">Seus produtos</a></li>
+                        <li><a class="share" href="#">Compartilhe</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
+
+    <main>
+        <section class="help the algorithm">
+            <div class="container">
+                <h3>Ajude o algoritmo a ser mais certeiro</h3>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid dolorum molestiae consequatur recusandae cumque minus aut repudiandae voluptatum illum. Accusantium esse cumque illo expedita cum repudiandae vitae veritatis ex aspernatur?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus nam aut necessitatibus odit atque id dolore, porro optio, veniam debitis, corporis quo voluptas quibusdam itaque sequi autem harum ex et?
+                </p>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate earum quisquam, alias amet voluptatum dolorum assumenda molestias iste, ipsam architecto doloremque consectetur temporibus illum aut eligendi quis ducimus dolore repellendus!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, iusto in! Deserunt odit asperiores, sed error, cumque quod quae eum nihil iure ut est quaerat repellat necessitatibus molestiae, sunt ullam.
+                </p>
+
+                <form action="#">
+                    <label for="name">Seu nome:</label>
+                    <input type="text" id="name" name="name">
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="cpf">CPF:</label>
+                    <input type="number" id="cpf" name="cpf">
+
+                    <input type="radio" id="male" name="genre" value="MALE">
+                    <label for="male"> Masculino</label>
+
+                    <input type="radio" id="female" name="genre" value="FEMALE">
+                    <label for="female"> Feminino</label>
+
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

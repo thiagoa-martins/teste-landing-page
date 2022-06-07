@@ -1,0 +1,96 @@
+:root {
+    --color-primary: #888888;
+    --color-secodary: #707070;
+    --color-ternary: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-primary);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 940px;
+}
+/***********
+    HEADER
+***********/
+.header {
+    background-color: var(--color-secodary);
+    color: var(--color-ternary);
+    text-align: center;
+    padding: 3em 0 150px;
+    /*
+        Para cada separação de vírgula temos um polígono. Configuramos seus pontos com os eixos x, y.
+    */
+    clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 100%, 79% 91%, 44% 77%, 0 60%, 0 0);
+}
+
+.header h2 {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.header .title-main {
+    margin: 5px 0;
+    font-size: 40px;
+}
+
+.header h4 {
+    margin: 1.5em 0 3em;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.header ul.menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.header ul.menu li {
+    width: 150px;
+    padding: 10px 0;
+    background-color: var(--color-ternary);
+    border-radius: 5px;
+    border: 3px solid var(--color-secodary);
+    transition: 200ms ease-in;
+}
+
+.header ul.menu li:hover {
+    background-color: var(--color-primary);
+}
+
+.header ul.menu li:hover a {
+    color: var(--color-ternary);
+}
+
+.header ul.menu li a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-size: 14px;
+    padding: 20px;
+}
+
+.header ul.menu li .meet {
+    padding: 20px 26.3px;
+}
+
+.header ul.menu li .your-products {
+    padding: 20px 29.8px;
+}
+
+.header ul.menu li .share {
+    padding: 20px 40px;
+}
+
+.header-box {
+    width: 900px;
+}
+
