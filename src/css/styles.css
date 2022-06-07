@@ -7,11 +7,13 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--color-primary);
+    font-size: 16px;
 }
 
 .container {
@@ -92,5 +94,70 @@ body {
 
 .header-box {
     width: 900px;
+}
+/************************
+    HELP THE ALGORITHM
+************************/
+.help-the-algorithm {
+}
+
+.help-the-algorithm .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.help-the-algorithm .text-content {
+    width: 55%;
+}
+
+.help-the-algorithm .text-content .title {
+    font-size: 1.25em;
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+
+.help-the-algorithm .text-content p {
+    font-size: 0.75em;
+    margin-bottom: 2em;
+    line-height: 20px;
+}
+
+.help-the-algorithm .form {
+    width: 40%;
+    font-size: 0.75em;
+    color: var(--color-primary);
+}
+
+.help-the-algorithm .form .field,
+.help-the-algorithm .form .submit {
+    display: block;
+    width: 100%;
+    margin: 5px 0 1em;
+    padding: 5px 10px;
+}
+
+.help-the-algorithm .form .submit {
+    border: 1px solid var(--color-primary);
+    border-radius: 3px;
+    color: var(--color-primary);
+    background-color: var(--color-ternary);
+    font-size: 1em;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.help-the-algorithm .form .submit:hover {
+    color: var(--color-ternary);
+    background-color: var(--color-primary);
+}
+
+.help-the-algorithm .form .genre {
+    border: none;
+    margin: 2em 0;
+}
+
+.help-the-algorithm .form .genre label {
+    margin-right: 2em;
 }
 
