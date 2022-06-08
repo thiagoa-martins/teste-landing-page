@@ -19,7 +19,7 @@ body {
 .container {
     margin: 0 auto;
     max-width: 940px;
-    padding: 2em;
+    padding: 0 2em;
 }
 
 .button {
@@ -333,8 +333,25 @@ body {
     }
 }
 
+@media screen and (max-width: 800px) {
+    .share .form-friend {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+    }
+}
+
 @media screen and (max-width: 650px) {
+    .header ul.menu li {
+        margin-bottom: 1.5em;
+    }
+
     .help-the-algorithm .form {
+        width: 100%;
+    }
+
+    .share .form-friend fieldset {
         width: 100%;
     }
 
@@ -347,9 +364,20 @@ body {
     .share .title::after {
         width: calc(25% - 5vw);
     }
+
+    
 }
 
 @media screen and (max-width: 490px) {
+    .header {
+        text-align: left;
+        padding: 4em 0 200px;
+    }
+
+    .header .title-main {
+        font-size: 2.2em;
+    }
+
     .your-products .product {
         display: flex;
         justify-content: space-between;
@@ -385,6 +413,10 @@ body {
 }
 
 @media screen and (max-width: 430px) {
+    .container {
+        padding: 0 1em;
+    }
+
     .your-products .title::before,
     .your-products .title::after {
         width: calc(25% - 5vw);
