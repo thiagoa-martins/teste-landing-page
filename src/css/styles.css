@@ -19,6 +19,7 @@ body {
 .container {
     margin: 0 auto;
     max-width: 940px;
+    padding: 2em;
 }
 
 .button {
@@ -159,6 +160,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3em;
+    font-size: 1.125em;
 }
 
 .your-products .title::before,
@@ -184,6 +186,7 @@ body {
 }
 
 .your-products .product .image {
+    width: 200px;
     height: 150px;
     border: 1px solid var(--color-secondary);
 }
@@ -291,4 +294,104 @@ body {
     padding: 100px 0 100px;
     clip-path: polygon(30% 16%, 82% 5%, 100% 0, 100% 100%, 80% 100%, 20% 100%, 0 100%, 0 24%);
     text-align: center;
+}
+
+@media screen and (max-width: 950px) {
+    .header ul.menu {
+        flex-wrap: wrap;
+    }
+
+    .header-box {
+        width: auto;
+    }
+
+    .help-the-algorithm .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .help-the-algorithm .text-content {
+        width: auto;
+    }
+
+    .help-the-algorithm .text-content .title {
+        text-align: center;
+    }
+
+    .help-the-algorithm .form {
+        width: 80%;
+    }
+
+    .your-products .title::before,
+    .your-products .title::after {
+        width: calc(38% - 5vw);
+    }
+
+    .share .title::before,
+    .share .title::after {
+        width: calc(35% - 5vw);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .help-the-algorithm .form {
+        width: 100%;
+    }
+
+    .your-products .title::before,
+    .your-products .title::after {
+        width: calc(30% - 5vw);
+    }
+
+    .share .title::before,
+    .share .title::after {
+        width: calc(25% - 5vw);
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .your-products .product {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .your-products .product .image {
+        display: inline-block;
+        width: 169px;
+        height: 129px;
+        margin-right: 1em;
+    }
+
+    .your-products .product div.product-information {
+        display: inline-block;
+        width: 200px;
+        height: 129px;
+        vertical-align: top;
+    }
+
+    .your-products .product div.product-information .title-product {
+        margin: 0 0 1em;
+    }
+
+    .your-products .product .description {
+        display: none;
+    }
+
+    .your-products .product button {
+        width: 169px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .your-products .title::before,
+    .your-products .title::after {
+        width: calc(25% - 5vw);
+    }
+
+    .share .title::before,
+    .share .title::after {
+        width: calc(20% - 5vw);
+    }
 }
