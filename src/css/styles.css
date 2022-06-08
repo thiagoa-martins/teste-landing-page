@@ -1,6 +1,6 @@
 :root {
     --color-primary: #888888;
-    --color-secodary: #707070;
+    --color-secondary: #707070;
     --color-ternary: #FFF;
 }
 
@@ -42,30 +42,27 @@ body {
     HEADER
 ***********/
 .header {
-    background-color: var(--color-secodary);
+    background-color: var(--color-secondary);
     color: var(--color-ternary);
     text-align: center;
     padding: 4em 0 150px;
-    /*
-        Para cada separação de vírgula temos um polígono. Configuramos seus pontos com os eixos x, y.
-    */
     clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 100%, 79% 91%, 44% 77%, 0 60%, 0 0);
 }
 
 .header h2 {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 1.25em;
 }
 
 .header .title-main {
     margin: 5px 0;
-    font-size: 40px;
+    font-size: 2.5em;
 }
 
 .header h4 {
     margin: 1.5em 0 3em;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 0.875em;
 }
 
 .header ul.menu {
@@ -79,7 +76,7 @@ body {
     height: 40px;
     background-color: var(--color-ternary);
     border-radius: 5px;
-    border: 3px solid var(--color-secodary);
+    border: 3px solid var(--color-secondary);
     transition: 200ms ease-in;
 }
 
@@ -97,7 +94,7 @@ body {
     align-items: center;
     text-decoration: none;
     color: var(--color-primary);
-    font-size: 14px;
+    font-size: 0.875em;
     width: 100%;
     height: 100%;
 }
@@ -170,7 +167,7 @@ body {
     display: inline-block;
     height: 1px;
     width: 38%;
-    background-color: var(--color-secodary);
+    background-color: var(--color-secondary);
 }
 
 .your-products .box-products {
@@ -182,12 +179,13 @@ body {
 .your-products .product {
     width: 200px;
     font-size: 0.75em;
+    margin-right: 1em;
     margin-bottom: 4em;
 }
 
 .your-products .product .image {
     height: 150px;
-    border: 1px solid var(--color-secodary);
+    border: 1px solid var(--color-secondary);
 }
 
 
@@ -242,7 +240,7 @@ body {
     display: inline-block;
     height: 1px;
     width: 38%;
-    background-color: var(--color-secodary);
+    background-color: var(--color-secondary);
 }
 
 .share .sub-title {
@@ -282,4 +280,15 @@ body {
     height: 39px;
     margin: 0 auto;
     font-size: 1em;
+}
+/****************
+    FOOTER
+****************/
+.footer {
+    color: var(--color-ternary);
+    font-size: 0.75em;
+    background-color: var(--color-secondary);
+    padding: 100px 0 100px;
+    clip-path: polygon(30% 16%, 82% 5%, 100% 0, 100% 100%, 80% 100%, 20% 100%, 0 100%, 0 24%);
+    text-align: center;
 }
