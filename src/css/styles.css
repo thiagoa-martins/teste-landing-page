@@ -185,12 +185,13 @@ body {
     margin-bottom: 4em;
 }
 
-.your-products .product .image {
+.your-products .product div.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     height: 150px;
-    border: 1px solid var(--color-secondary);
 }
-
 
 .your-products .product .title-product {
     margin: 1em 0;
