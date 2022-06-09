@@ -40,3 +40,4 @@ xhttp.onreadystatechange = function() {
 xhttp.open("GET", "https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1", true);
 
 xhttp.send();
+
