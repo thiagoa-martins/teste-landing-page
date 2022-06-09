@@ -18,8 +18,8 @@ body {
 
 .container {
     margin: 0 auto;
-    max-width: 940px;
-    padding: 0 2em;
+    max-width: 1440px;
+    padding: 0 7em;
 }
 
 .button {
@@ -296,7 +296,17 @@ body {
     text-align: center;
 }
 
+@media screen and (max-width: 1200px) {
+    .header-box {
+        width: auto;
+    }
+}
+
 @media screen and (max-width: 950px) {
+    .container {
+        padding: 0 2em;
+    }
+
     .header ul.menu {
         flex-wrap: wrap;
     }
