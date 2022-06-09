@@ -224,6 +224,10 @@ body {
     height: 39px;
     margin: 0 auto;
 }
+
+.your-products .button.more-products.hidden-button {
+    display: none;
+}
 /****************
     SHARE
 ****************/

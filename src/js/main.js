@@ -9,19 +9,38 @@ xhttp.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200) {
         const response = JSON.parse(this.responseText);
 
+        console.log(response)
+
         listOfProducts(response);
         
         boxProdutos.innerHTML = products;
 
+        const newPage = response.nextPage;
+
         buttonMoreProducts.addEventListener("click", () => {
-            listOfProducts(response);
-            
-            boxProdutos.innerHTML = products;
+
+            xhttp.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    const response = JSON.parse(this.responseText);
+
+                    console.log(response)
+                    
+                    listOfProducts(response);
+
+                    boxProdutos.innerHTML = products; 
+                }
+            }
+
+            xhttp.open("GET", `https://${newPage}`, true);
+            xhttp.send();
+
+            buttonMoreProducts.classList.add("hidden-button");
+                 
         });
     }
 };
 
-xhttp.open("GET", "https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1", true);
+xhttp.open("GET", `https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1`, true);
 
 xhttp.send();
 
