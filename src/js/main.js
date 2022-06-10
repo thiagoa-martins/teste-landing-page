@@ -157,6 +157,12 @@ inputSubmit.addEventListener("click", function() {
 
         if(!hasError) {
             // form.submit();
+            const span = inputSubmit.nextSibling.nextSibling;
+            span.innerText = "Seus dados foram enviados com sucesso!"
+
+            setTimeout(() => {
+                span.innerHTML = "";
+            }, 5000);
 
             inputName.value = "";
             inputEmail.value = "";
@@ -169,6 +175,7 @@ inputSubmit.addEventListener("click", function() {
 
 const formFriend = document.getElementById("formFriend");
 const buttonSubmitNow = document.getElementById("buttonSubmitNow");
+const boxEmail = document.getElementsByClassName("box-email");
 
 const inputNameFriend = document.forms["formFriend"]["friendName"];
 const inputEmailFriend = document.forms["formFriend"]["friendEmail"];
@@ -227,6 +234,13 @@ buttonSubmitNow.addEventListener("click", function() {
             checkEmailFriend();
         
             if(!hasError) {
+                const span = buttonSubmitNow.nextSibling.nextSibling;
+                span.innerText = "Os dados do seu amigo foram enviados com sucesso!"
+
+                setTimeout(() => {
+                    span.innerHTML = "";
+                }, 5000);
+
                 inputNameFriend.value = "";
                 inputEmailFriend.value = "";
             }

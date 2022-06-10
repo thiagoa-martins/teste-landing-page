@@ -39,6 +39,17 @@ body {
     color: var(--color-ternary);
     background-color: var(--color-primary);
 }
+
+.mensage-success {
+    display: block;
+    color: #308330;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 2em;
+    letter-spacing: 1px;
+    transition: all 200ms;
+    text-align: center;
+}
 /***********
     HEADER
 ***********/
