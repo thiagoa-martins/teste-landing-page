@@ -134,11 +134,30 @@ body {
     color: var(--color-primary);
 }
 
+.help-the-algorithm .form .span-mensage {
+    display: block;
+    margin: 1em 0;
+    color: #FF0000;
+    font-size: 1em;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
 .help-the-algorithm .form .field {
     display: block;
     width: 100%;
     margin: 5px 0 1em;
     padding: 5px 10px;
+}
+
+.help-the-algorithm .form .field:focus {
+    outline-style: solid;
+    color: var(--color-secondary);
+}
+
+.help-the-algorithm .form .field.error {
+    border: 1px solid red;
+    outline: none;
 }
 
 .help-the-algorithm .form .genre {

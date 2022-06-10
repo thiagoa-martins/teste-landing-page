@@ -47,23 +47,26 @@
 
                 <form id="form" class="form" action="#">
                     <label for="name">Seu nome:</label>
-                    <input type="text" id="name" class="field" name="name" required>
+                    <input type="text" id="name" class="field" name="name">
+                    <span class="span-mensage"></span>
 
                     <label for="email">E-mail:</label>
-                    <input type="email" id="email" class="field" name="email" required>
+                    <input type="email" id="email" class="field" name="email">
+                    <span class="span-mensage"></span>
 
                     <label for="cpf">CPF:</label>
-                    <input type="number" id="cpf" class="field" name="cpf" required>
+                    <input type="number" id="cpf" class="field" name="cpf">
+                    <span class="span-mensage"></span>
 
                     <fieldset class="genre">
-                        <input type="radio" id="male" name="genre" value="MALE" required>
+                        <input type="radio" id="male" name="genre" value="MALE">
                         <label for="male"> Masculino</label>
 
-                        <input type="radio" id="female" name="genre" value="FEMALE" required>
+                        <input type="radio" id="female" name="genre" value="FEMALE">
                         <label for="female"> Feminino</label>
                     </fieldset>    
 
-                    <input type="submit" class="button" value="Enviar">
+                    <input type="submit" class="button" name="submit" value="Enviar">
                 </form>
             </div>
         </section>

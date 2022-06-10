@@ -9,9 +9,7 @@ xhttp.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200) {
         const response = JSON.parse(this.responseText);
 
-        console.log(response)
-
-        listOfProducts(response);
+        listProducts(response);
         
         boxProdutos.innerHTML = products;
 
@@ -22,10 +20,8 @@ xhttp.onreadystatechange = function() {
             xhttp.onreadystatechange = function() {
                 if(this.readyState == 4 && this.status == 200) {
                     const response = JSON.parse(this.responseText);
-
-                    console.log(response)
                     
-                    listOfProducts(response);
+                    listProducts(response);
 
                     boxProdutos.innerHTML = products; 
                 }
@@ -44,7 +40,7 @@ xhttp.open("GET", `https://frontend-intern-challenge-api.iurykrieger.vercel.app/
 
 xhttp.send();
 
-function listOfProducts(response) {
+function listProducts(response) {
     response.products.forEach(product => {
         products += `
             <div class="product">
@@ -53,7 +49,7 @@ function listOfProducts(response) {
                 </div>
                 
                 <div class="product-information">
-                    <h4 class="title-product">${product.name}</h4>
+                    <h4 class="title-product">Produto ${product.id + 1}</h4>
     
                     <p class="description">
                         ${product.description}
@@ -74,3 +70,65 @@ function listOfProducts(response) {
  * O que tenho que fazer?
  * - evitar código repetido utilizando funções
  */
+
+const form = document.querySelector("#form");
+
+const inputSubmit = document.forms.form.submit;
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    validate();
+});
+
+function validate() {
+    const inputName = document.forms.form.name;
+    const inputEmail = document.forms.form.email;
+    const inputCpf = document.forms.form.cpf;
+    
+    if(inputName.value == "") {
+        const span = inputName.nextSibling.nextSibling;
+
+        span.innerText = "Informe o seu nome completo";
+
+        inputName.classList.add("error");
+    } else {
+        const span = inputName.nextSibling.nextSibling;
+        
+        span.innerText = "";
+
+        inputName.classList.remove("error"); 
+    }
+    console.log(inputEmail.value)
+
+    if(inputEmail.value == "") {
+        const span = inputEmail.nextSibling.nextSibling;
+
+        span.innerText = "Informe um email válido";
+
+        inputEmail.classList.add("error");
+    } else {
+        const span = inputEmail.nextSibling.nextSibling;
+
+        span.innerText = "";
+
+        inputEmail.classList.remove("error"); 
+    }
+
+    if((inputCpf.value == "") || !(inputCpf.value.length == 11)) {
+
+        console.log(inputCpf.value.length)
+        const span = inputCpf.nextSibling.nextSibling;
+
+        span.innerText = "Informe um cpf válido";
+
+        inputCpf.classList.add("error");
+    } else {
+        const span = inputCpf.nextSibling.nextSibling;
+
+        span.innerText = "";
+
+        inputCpf.classList.remove("error"); 
+    }
+}
+
