@@ -45,7 +45,7 @@
                     </p>
                 </div>
 
-                <form id="form" class="form" action="#">
+                <form id="form" class="form" action="teste.html">
                     <label for="name">Seu nome:</label>
                     <input type="text" id="name" class="field" name="name">
                     <span class="span-mensage"></span>
@@ -59,14 +59,14 @@
                     <span class="span-mensage"></span>
 
                     <fieldset class="genre">
-                        <input type="radio" id="male" name="genre" value="MALE">
+                        <input type="radio" id="male" name="genre" value="MALE" required>
                         <label for="male"> Masculino</label>
 
                         <input type="radio" id="female" name="genre" value="FEMALE">
                         <label for="female"> Feminino</label>
                     </fieldset>    
 
-                    <input type="submit" class="button" name="submit" value="Enviar">
+                    <input id="inputSubmit" type="submit" class="button" name="submit" value="Enviar">
                 </form>
             </div>
         </section>
@@ -89,18 +89,24 @@
                 <h4 class="sub-title">Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</h4>
 
                 <form id="formFriend" class="form-friend" action="#">
-                    <fieldset>
-                        <label for="friendName">Nome do seu amigo:</label>
-                        <input id="friendName" class="friend-name" type="text" name="friendName" required>
-                    </fieldset>
+                    <div>
+                        <fieldset>
+                            <label for="friendName">Nome do seu amigo:</label>
+                            <input id="friendName" class="friend-name" type="text" name="friendName">
+                            <span class="span-mensage"></span>
+                        </fieldset>
+    
+                        <fieldset class="box-email">
+                            <label for="friendEmail">E-mail:</label>
+                            <input id="friendEmail" type="email" class="friend-email" name="friendEmail">
+                            <span class="span-mensage"></span>
+                        </fieldset>
 
-                    <fieldset class="box-email">
-                        <label for="friendEmail">E-mail:</label>
-                        <input id="friendEmail" class="friend-email" type="email" name="friendEmail" required>
-                    </fieldset>
+                        <span class="success"></span>
+                    </div>
+        
+                    <button id="buttonSubmitNow" class="button">Enviar agora</button>
                 </form>
-
-                <button id="buttonSubmitNow" class="button">Enviar agora</button>
             </div>
         </section>
 

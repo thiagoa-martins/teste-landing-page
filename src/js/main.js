@@ -72,63 +72,166 @@ function listProducts(response) {
  */
 
 const form = document.querySelector("#form");
+const inputSubmit = document.querySelector("#inputSubmit");
 
-const inputSubmit = document.forms.form.submit;
+const inputName = document.forms["form"]["name"];
+const inputEmail = document.forms["form"]["email"];
+const inputCpf = document.forms["form"]["cpf"];
+const inputGenre = document.forms["form"]["genre"];
 
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
+inputSubmit.addEventListener("click", function() {
+    form.onsubmit = function(e) {
+        e.preventDefault();
 
-    validate();
+        inputName.addEventListener("keyup", function() {
+            checkName();
+        });
+
+        inputEmail.addEventListener("keyup", function() {
+            checkEmail();
+        });
+
+        inputCpf.addEventListener("keyup", function() {
+            checkCpf();
+        });
+
+        let hasError = false;
+
+        function checkName() {
+            if(inputName.value == "") {
+                hasError = true;
+    
+                const span = inputName.nextSibling.nextSibling;
+    
+                span.innerText = "Informe o seu nome completo";
+    
+                inputName.classList.add("error");
+            } else {
+                const span = inputName.nextSibling.nextSibling;
+                
+                span.innerText = "";
+    
+                inputName.classList.remove("error"); 
+            }
+        }
+        
+        function checkEmail() {
+            if(inputEmail.value == "") {
+                hasError = true;
+
+                const span = inputEmail.nextSibling.nextSibling;
+
+                span.innerText = "Informe um email válido";
+
+                inputEmail.classList.add("error");
+            } else {
+                const span = inputEmail.nextSibling.nextSibling;
+
+                span.innerText = "";
+
+                inputEmail.classList.remove("error"); 
+            }
+        }
+        
+        function checkCpf() {
+            if((inputCpf.value == "") || !(inputCpf.value.length == 11)) {
+                hasError = true;
+    
+                const span = inputCpf.nextSibling.nextSibling;
+    
+                span.innerText = "Informe um cpf válido";
+    
+                inputCpf.classList.add("error");
+            } else {
+                const span = inputCpf.nextSibling.nextSibling;
+    
+                span.innerText = "";
+    
+                inputCpf.classList.remove("error"); 
+            }
+        }
+        
+        checkName();
+        checkEmail();
+        checkCpf();
+
+        if(!hasError) {
+            // form.submit();
+
+            inputName.value = "";
+            inputEmail.value = "";
+            inputCpf.value = "";
+            inputGenre[0].checked = false;
+            inputGenre[1].checked = false;
+        }
+    }
 });
 
-function validate() {
-    const inputName = document.forms.form.name;
-    const inputEmail = document.forms.form.email;
-    const inputCpf = document.forms.form.cpf;
+const formFriend = document.getElementById("formFriend");
+const buttonSubmitNow = document.getElementById("buttonSubmitNow");
+
+const inputNameFriend = document.forms["formFriend"]["friendName"];
+const inputEmailFriend = document.forms["formFriend"]["friendEmail"];
+
+buttonSubmitNow.addEventListener("click", function() {
+    formFriend.onsubmit = function(e) {
+        e.preventDefault();
+
+        inputNameFriend.addEventListener("keyup", function() {
+            checkNameFriend();
+        });
     
-    if(inputName.value == "") {
-        const span = inputName.nextSibling.nextSibling;
-
-        span.innerText = "Informe o seu nome completo";
-
-        inputName.classList.add("error");
-    } else {
-        const span = inputName.nextSibling.nextSibling;
+        inputEmailFriend.addEventListener("keyup", function() {
+            checkEmailFriend();
+        });
+    
+        let hasError = false;
+    
+            function checkNameFriend() {
+                if(inputNameFriend.value == "") {
+                    hasError = true;
         
-        span.innerText = "";
-
-        inputName.classList.remove("error"); 
+                    const span = inputNameFriend.nextSibling.nextSibling;
+        
+                    span.innerText = "Informe o seu nome completo";
+        
+                    inputNameFriend.classList.add("error");
+                } else {
+                    const span = inputNameFriend.nextSibling.nextSibling;
+        
+                    span.innerText = "";
+        
+                    inputNameFriend.classList.remove("error"); 
+                }
+            }
+        
+            function checkEmailFriend() {
+                if(inputEmailFriend.value == "") {
+                    hasError = true;
+        
+                    const span = inputEmailFriend.nextSibling.nextSibling;
+        
+                    span.innerText = "Informe um email válido";
+        
+                    inputEmailFriend.classList.add("error");
+                } else {
+                    const span = inputEmailFriend.nextSibling.nextSibling;
+        
+                    span.innerText = "";
+        
+                    inputEmailFriend.classList.remove("error"); 
+                }
+            }
+        
+            checkNameFriend();
+            checkEmailFriend();
+        
+            if(!hasError) {
+                inputNameFriend.value = "";
+                inputEmailFriend.value = "";
+            }
     }
-    console.log(inputEmail.value)
+});
 
-    if(inputEmail.value == "") {
-        const span = inputEmail.nextSibling.nextSibling;
 
-        span.innerText = "Informe um email válido";
-
-        inputEmail.classList.add("error");
-    } else {
-        const span = inputEmail.nextSibling.nextSibling;
-
-        span.innerText = "";
-
-        inputEmail.classList.remove("error"); 
-    }
-
-    if((inputCpf.value == "") || !(inputCpf.value.length == 11)) {
-
-        console.log(inputCpf.value.length)
-        const span = inputCpf.nextSibling.nextSibling;
-
-        span.innerText = "Informe um cpf válido";
-
-        inputCpf.classList.add("error");
-    } else {
-        const span = inputCpf.nextSibling.nextSibling;
-
-        span.innerText = "";
-
-        inputCpf.classList.remove("error"); 
-    }
-}
 

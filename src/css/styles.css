@@ -165,6 +165,10 @@ body {
     margin: 2em 0;
 }
 
+.help-the-algorithm .form .genre input.error {
+    border: 1px solid red;
+}
+
 .help-the-algorithm .form .genre label {
     margin-right: 2em;
 }
@@ -277,7 +281,7 @@ body {
     margin-bottom: 3em;
 }
 
-.share .form-friend {
+.share .form-friend div {
     display: flex;
     justify-content: space-between;
     width: 750px;
@@ -302,11 +306,24 @@ body {
     padding: 5px 10px;
 }
 
-.share .button {
+.share .form-friend input.error {
+   border: 1px solid #FF0000;
+   outline: none;
+}
+
+.share .form-friend .span-mensage {
+    display: block;
+    margin: 1em 0;
+    color: #FF0000;
+    font-size: 1em;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.share .form-friend .button {
     width: 260px;
     height: 39px;
     margin: 0 auto;
-    font-size: 1em;
 }
 /****************
     FOOTER
