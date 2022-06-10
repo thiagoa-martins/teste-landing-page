@@ -396,7 +396,7 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-    .share .form-friend {
+    .share .form-friend div {
         flex-direction: column;
         justify-content: center;
         align-items: center;
