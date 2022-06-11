@@ -1,46 +1,25 @@
-const boxProdutos = document.querySelector("#boxProducts");
+const boxProducts = document.querySelector("#boxProducts");
 const buttonMoreProducts = document.getElementById("buttonMoreProducts");
 
 let products = "";
 
-const xhttp = new XMLHttpRequest();
+fetch("https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1")
+.then(turnIntoJson)
+.then(listProducts)
+.then(displayProducts)
 
-xhttp.onreadystatechange = function() {
-    if(this.readyState == 4 && this.status == 200) {
-        const response = JSON.parse(this.responseText);
+buttonMoreProducts.addEventListener("click", function() {
+    fetch("https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1")
+    .then(turnIntoJson)
+    .then(newPage)  
+});
 
-        listProducts(response);
-        
-        boxProdutos.innerHTML = products;
-
-        const newPage = response.nextPage;
-
-        buttonMoreProducts.addEventListener("click", () => {
-
-            xhttp.onreadystatechange = function() {
-                if(this.readyState == 4 && this.status == 200) {
-                    const response = JSON.parse(this.responseText);
-                    
-                    listProducts(response);
-
-                    boxProdutos.innerHTML = products; 
-                }
-            }
-
-            xhttp.open("GET", `https://${newPage}`, true);
-            xhttp.send();
-
-            buttonMoreProducts.classList.add("hidden-button");
-                 
-        });
-    }
-};
-
-xhttp.open("GET", `https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1`, true);
-
-xhttp.send();
+function turnIntoJson(response) {
+  return response.json();
+}
 
 function listProducts(response) {
+
     response.products.forEach(product => {
         products += `
             <div class="product">
@@ -64,12 +43,24 @@ function listProducts(response) {
             </div>
         `;
     });
+
+    return products;
 }
 
-/**
- * O que tenho que fazer?
- * - evitar código repetido utilizando funções
- */
+function displayProducts(products) {
+    boxProducts.innerHTML = products;
+}
+
+function newPage(response) {
+    const newPage = response.nextPage;
+    
+    fetch(`https://${newPage}`)
+    .then(turnIntoJson)
+    .then(listProducts)
+    .then(displayProducts)
+    
+    buttonMoreProducts.classList.add("hidden-button");
+}
 
 const form = document.querySelector("#form");
 const inputSubmit = document.querySelector("#inputSubmit");
