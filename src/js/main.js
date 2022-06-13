@@ -147,7 +147,6 @@ inputSubmit.addEventListener("click", function() {
         checkCpf();
 
         if(!hasError) {
-            // form.submit();
             const span = inputSubmit.nextSibling.nextSibling;
             span.innerText = "Seus dados foram enviados com sucesso!"
 

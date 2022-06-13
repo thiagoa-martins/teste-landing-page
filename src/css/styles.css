@@ -40,7 +40,7 @@ body {
     background-color: var(--color-primary);
 }
 
-.mensage-success {
+.message-success {
     display: block;
     color: #308330;
     font-weight: bold;
@@ -145,7 +145,7 @@ body {
     color: var(--color-primary);
 }
 
-.help-the-algorithm .form .span-mensage {
+.help-the-algorithm .form .span-message {
     display: block;
     margin: 1em 0;
     color: #FF0000;
@@ -322,7 +322,7 @@ body {
    outline: none;
 }
 
-.share .form-friend .span-mensage {
+.share .form-friend .span-message {
     display: block;
     margin: 1em 0;
     color: #FF0000;
